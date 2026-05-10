@@ -14,10 +14,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # 极其关键：必须拉取子模块，否则 FixIt 主题文件夹是空的
           submodules: recursive
           fetch-depth: 0
 
@@ -33,11 +28,17 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          # 开启扩展版，处理 FixIt 的 SCSS
           extended: true
 
+      # --- 抛弃 npm，直接物理下载二进制文件并强制注入环境变量 ---
+      - name: Install Dart Sass
+        run: |
+          curl -LJO https://github.com/sass/dart-sass/releases/download/1.75.0/dart-sass-1.75.0-linux-x64.tar.gz
+          tar -xf dart-sass-1.75.0-linux-x64.tar.gz
+          echo "$(pwd)/dart-sass" >> $GITHUB_PATH
+
       - name: Build with Hugo
-        run: hugo --minify
+        run: hugo --minify --gc
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
