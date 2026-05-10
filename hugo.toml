@@ -1,0 +1,53 @@
+baseURL = 'https://xnqjns.github.io/'
+title = 'xnqjns 的二进制实验室'
+theme = 'FixIt'
+languageCode = 'zh-cn'
+hasCoreSVG = true
+
+[params]
+  # 网站描述（对 SEO 有好处）
+  description = '专注于 Linux 内核安全、Glibc 堆利用与自动化漏洞挖掘'
+  # 默认外观 (自动 "auto", 浅色 "light", 深色 "dark")
+  defaultTheme = 'light'
+  
+  [params.header]
+    # 导航栏标题
+    title = { name = "xnqjns'blog", pre = "<i class='fa-solid fa-terminal'></i>" }
+    
+  [params.footer]
+    enable = true
+    # 1. 是否显示 "由 Hugo 强力驱动" 和主题名字
+    hugo = false 
+    # 2. 版权信息设置
+    copyright = true
+    author = true       # 是否显示作者名字
+    since = 2026        # 你的网站是从哪一年开始建的
+    license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    custom = '<span style="color: #666;"><i class="fa-solid fa-code"></i> Talk is cheap. Show me the code.</span>'
+
+  [params.section]
+    # 列表页每页显示的文章数
+    paginate = 10
+    
+  [params.code]
+    # 代码块的最大高度，超过会显示滚动条
+    maxLines = 50
+    # 是否显示代码块的复制按钮
+    copy = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "博文"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 2
+  [[menu.main]]
+    identifier = "/about/"
+    name = "关于"
+    url = "/about/"
+    weight = 3
