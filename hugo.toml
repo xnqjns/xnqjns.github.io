@@ -1,5 +1,5 @@
 baseURL = 'https://xnqjns.github.io/'
-title = 'xnqjns 的二进制实验室'
+title = "xnqjns'blog"
 theme = 'FixIt'
 languageCode = 'zh-cn'
 hasCoreSVG = true
@@ -9,6 +9,10 @@ hasCoreSVG = true
   description = '专注于 Linux 内核安全、Glibc 堆利用与自动化漏洞挖掘'
   # 默认外观 (自动 "auto", 浅色 "light", 深色 "dark")
   defaultTheme = 'light'
+  
+  [params.home]
+	# 关掉个人主页模式，让它变成纯粹的技术博客列表
+	profileMode = false
   
   [params.header]
     # 导航栏标题
@@ -38,7 +42,7 @@ hasCoreSVG = true
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "博文"
+    name = "全部文章"
     url = "/posts/"
     weight = 1
   [[menu.main]]
@@ -46,8 +50,17 @@ hasCoreSVG = true
     name = "分类"
     url = "/categories/"
     weight = 2
-  [[menu.main]]
-    identifier = "/about/"
-    name = "关于"
-    url = "/about/"
-    weight = 3
+    
+[markup]
+  [markup.highlight]
+    # 极其关键：必须设置为 false，让主题接管代码颜色
+    noClasses = false
+    guessSyntax = true
+    lineNos = true
+  [markup.tableOfContents]
+    # 从二级标题（##）开始抓取目录
+    startLevel = 2
+    # 抓取到四级标题（####）为止（太深的标题就不显示在右侧了，免得目录太长）
+    endLevel = 4
+    # 不强制使用带数字的有序列表
+    ordered = false
