@@ -30,9 +30,9 @@ tags:
 
 复现本题所需的原始二进制文件及动态库已打包，请在 Ubuntu 22.04 虚拟机环境下食用： 
 
- -[⬇️ 下载题目文件 (attachment-35)](./file/attachment-35) 
+ -[⬇️ 下载题目文件 (attachment-35)](./files/attachment-35) 
 
- -[📄 下载动态库 (attachment-35.so)](./file/attachment-35.so) 
+ -[📄 下载动态库 (attachment-35.so)](./files/attachment-35.so) 
 
 {{< /admonition >}}
 
