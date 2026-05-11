@@ -24,6 +24,20 @@ tags:
 
 
 
+## 资源下载
+
+{{< admonition type="note" title="📦 附件下载 (Downloads)" open=true >}} 
+
+复现本题所需的原始二进制文件及动态库已打包，请在 Ubuntu 22.04 虚拟机环境下食用： 
+
+ -[⬇️ 下载题目文件 (attachment-35)](./file/attachment-35) 
+
+ -[📄 下载动态库 (attachment-35.so)](./file/attachment-35.so) 
+
+{{< /admonition >}}
+
+
+
 ## 题目分析
 
 ![](./image/2026-05-10_222058.jpg)
